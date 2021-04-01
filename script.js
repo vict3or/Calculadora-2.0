@@ -44,21 +44,17 @@ function clearScreen() {
   screenTwo.innerText = ''
   valThreeSolve = 0
   checkIfEqualWasToggled = false
+  checker = 0
 }
 
 function solve() {
-
-  // if (valThreeSolve == 0) {
-  //   return
-  // }
-
   let screenTwoText = screenTwo.innerText
   let signTwoSolve = ''
   let signThree = ''
   let solveSign = ''
 
   for (let i = 0; i < screenTwoText.length; i++) {
-    if (isNaN(screenTwoText[i])) {
+    if (isNaN(screenTwoText[i]) && screenTwoText[i] != '.') {
       solveSign = screenTwoText[i]
       break
     }
@@ -80,21 +76,26 @@ function solve() {
 
   if (solveSign == '+') {
     if (valThreeSolve == 0) {
+      sign = signTwo
       screenOne.innerText = `${valOneSolve}+${valTwoSolve}`
       screenTwo.innerText = `${valOneSolve + valTwoSolve}${signThree}`
       valThreeSolve = valOneSolve + valTwoSolve
     } else {
+      sign = signTwo
+      screenOne.innerText = `${valThreeSolve}+${valTwoSolve}`
       screenTwo.innerText = `${valThreeSolve + valTwoSolve}${signThree}`
       valThreeSolve += valOneSolve
     }
   }
   else if (solveSign == '-') {
-    sign = signTwo
     if (valThreeSolve == 0) {
+      sign = signTwo
       screenOne.innerText = `${valOneSolve}-${valTwoSolve}`
       screenTwo.innerText = `${valOneSolve - valTwoSolve}${signThree}`
       valThreeSolve = valOneSolve - valTwoSolve
     } else {
+      sign = signTwo
+      screenOne.innerText = `${valThreeSolve}-${valTwoSolve}`
       screenTwo.innerText = `${valThreeSolve - valTwoSolve}${signThree}`
       valThreeSolve -= valTwoSolve
     }
@@ -105,16 +106,20 @@ function solve() {
       screenTwo.innerText = `${valOneSolve * valTwoSolve}${signThree}`
       valThreeSolve = valOneSolve * valTwoSolve
     } else {
+      sign = signTwo
+      screenOne.innerText = `${valThreeSolve}x${valTwoSolve}`
       screenTwo.innerText = `${valThreeSolve * valTwoSolve}${signThree}`
       valThreeSolve *= valTwoSolve
     }
-  } else {
+  } else if (solveSign == '/'){
     if (valThreeSolve == 0) {
       sign = signTwo
       screenOne.innerText = `${valOneSolve}/${valTwoSolve}`
       screenTwo.innerText = `${valOneSolve / valTwoSolve}${signThree}`
       valThreeSolve = valOneSolve / valTwoSolve
     } else {
+      sign = signTwo
+      screenOne.innerText = `${valThreeSolve}/${valTwoSolve}`
       screenTwo.innerText = `${valThreeSolve / valTwoSolve}${signThree}`
       valThreeSolve /= valOneSolve
     }
@@ -130,10 +135,11 @@ function multiplyFunction() {
     solve()
     return
   } else {
+    console.log('passei por aqui')
     valOne = Number(screenTwo.innerText.split('x')[0])
     valTwo = Number(screenTwo.innerText.split('x')[1])
-    sign = 'x'
   }
+  sign = 'x'
   screenOne.innerText += screenTwo.innerText
   if (valTwo == 0 && valThreeSolve == 0 || checkIfEqualWasToggled == true) {
     return
