@@ -1,0 +1,158 @@
+@font-face {
+  font-family: "Poppins";
+  src: url("fontes/Poppins-SemiBold.ttf");
+}
+
+@font-face {
+  font-family: "Poppins-Light";
+  src: url("fontes/Poppins-Light.ttf");
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", "Segoe UI", Arial;
+}
+
+body {
+  background: rgb(231, 227, 227);
+}
+
+header {
+  background: url(imagens/hero.jpg);
+  box-shadow: inset 0 0 0 2000px rgb(44 46 68 / 90%);
+  background-size: cover;
+  background-position: top right ;
+  height: 200px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 60px;
+  color: #FFFFFF;
+}
+
+
+
+main {
+  width: 100%;
+  height: 20rem;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+
+.wrapper {
+  background: #ffffff;
+  width: 250px;
+  height: 420px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding: 10px;
+  border-radius: 5px;
+  font-family: "Poppins-Light";
+  color: #131313;
+  box-shadow: 0 2px 6px rgb(0 0 0 / 15%);
+}
+
+.screen {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  text-align: flex-end;
+  font-size: 20px;
+  width: 225px;
+  height: 80px;
+  outline: none;
+  border: .5px solid #131313 ; 
+  padding: 10px;
+}
+
+.screen p {
+  text-align: end;
+  padding: 3px;
+}
+
+.one {
+  color: #3c3d3f;
+}
+
+.wrapper div{
+  background: #dadce0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50px;
+  height: 50px;
+  border: 1px solid #a7a9ac;
+  border-radius: 50%;
+  padding: 2px;
+  margin: 1px;
+  font-size: 25px;
+  transition: 0.10s;
+  cursor: pointer;
+}
+
+.wrapper div:hover {
+  transform: scale(1.05);
+}
+
+#equal {
+  color: #fff;
+  background: #4285f4;
+}
+
+.wrapper button {
+  background:  #dadce0;
+  display: inline-block;
+  width: 112px;
+  height: 50px;
+  padding: 2px;
+  border-radius: 10%;
+  font-size: 18px;
+  border: none;
+  transition: 0.10s;
+  cursor: pointer;
+}
+
+.wrapper button:hover {
+  transform: scale(1.05);
+}
+
+#clear {
+  margin-right: 4px;
+  margin-left: 1.5px;
+}
+
+#delete {
+  margin-left: 4px;
+}
+
+#delete:hover {
+  background: #973c3d;
+}
+
+footer {
+  color: #fff;
+  height: 90px;
+  background: #29303c;
+  margin-top: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content:center;
+  align-items: center;
+  text-align: center;
+  padding: 20px;
+}
+
+.contact {
+  height: 70px;
+  width: 100px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+}
