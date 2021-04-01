@@ -181,7 +181,7 @@ function sumFunction() {
     screenOne.innerText = `${valOne + valThreeSolve} -`
     screenTwo.innerText = `${valOne + valThreeSolve}`
     checker = 1
-    valThreeSolve -= valOne
+    valThreeSolve += valOne
   }
 }
 
