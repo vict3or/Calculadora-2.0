@@ -124,7 +124,6 @@ function solve() {
       valThreeSolve /= valOneSolve
     }
   }
-
 }
 
 function multiplyFunction() {
